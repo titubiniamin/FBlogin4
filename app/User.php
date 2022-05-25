@@ -16,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','fb_id'
+//        'name',
+        'email', 'password','fb_id'
     ];
 
     /**
@@ -36,4 +37,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function mwApplicantss(){
+        return $this->hasOne(MwApplicant::class, 'user_id');
+    }
+//    public function mwApplicant()
+//    {
+//        return $this->hasOne(MwApplicant::class,'Applicant_Id');
+//    }
 }

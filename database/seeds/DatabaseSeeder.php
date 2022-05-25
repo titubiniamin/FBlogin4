@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $seeders=array('DivisionSeeder','DistrictSeeder','UpazillaSeeder');
+//        $this->call(DivisionSeeder::class);
+        foreach($seeders as $seed){
+            $this->call($seed);
+        }
+
         // $this->call(UsersTableSeeder::class);
     }
 }
